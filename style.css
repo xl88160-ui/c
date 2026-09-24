@@ -14,12 +14,19 @@ p{font-size:18px;opacity:.9;margin:0 0 20px}span{font-size:13px;opacity:.65}
 .moon-wrap.grow3{transform:translate(-50%,-50%) scale(2.45)}
 .moon-wrap.grow3 .moon{box-shadow:0 0 75px #fff2a0,0 0 190px #ffe990aa}
 .hint{position:absolute;bottom:28px;width:100%;text-align:center;font-size:12px;opacity:.4;letter-spacing:2px}
-#dinoGame{position:fixed;inset:0;z-index:20;background:radial-gradient(circle at 50% 25%,#ffeeb0 0,#5d6fa3 34%,#11182f 72%,#070a17 100%);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .7s}
+
+#dinoGame{position:fixed;inset:0;z-index:20;background:#171522;opacity:0;pointer-events:none;transition:opacity .7s;overflow:hidden}
 #dinoGame.show{opacity:1;pointer-events:auto}
-.gameMoon{position:absolute;width:min(42vw,320px);height:min(42vw,320px);border-radius:50%;right:8%;top:7%;background-image:url("https://assets.science.nasa.gov/dynamicimage/assets/science/psd/earths-moon/outreach-materials/NASA-LRO-Moon-mosaic.png?crop=faces%2Cfocalpoint&fit=clip&h=1041&w=1041");background-size:cover;background-position:center;box-shadow:0 0 55px #fff1a0,0 0 150px #ffe99066}
-.gameCard{position:relative;width:min(94vw,900px);height:min(62vh,430px);min-height:300px;border:1px solid #ffffff44;border-radius:22px;overflow:hidden;background:linear-gradient(#18244755,#070c1ddd);box-shadow:0 25px 80px #0009;backdrop-filter:blur(3px)}
-.gameTitle{position:absolute;top:16px;left:0;width:100%;text-align:center;font-size:clamp(20px,4vw,32px);font-weight:700;z-index:2;text-shadow:0 3px 12px #000}
-.gameScore{position:absolute;right:18px;top:18px;font:700 16px monospace;z-index:3}
-#gameCanvas{width:100%;height:100%;display:block}
-.gameTip{position:absolute;bottom:12px;left:0;width:100%;text-align:center;font-size:12px;opacity:.7;z-index:3}
-@media(max-width:600px){.moon-wrap{top:31%;width:190px;height:190px}.content{top:53%}h1{letter-spacing:7px}.small{letter-spacing:3px}.gameCard{width:96vw;height:52vh;min-height:290px}.gameMoon{width:170px;height:170px;right:-25px;top:35px}}
+.gameStars{position:absolute;inset:0;opacity:.42;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:73px 73px}
+.gameMoon{position:absolute;width:min(46vw,390px);height:min(46vw,390px);border-radius:50%;right:8%;top:4%;background-image:url("https://assets.science.nasa.gov/dynamicimage/assets/science/psd/earths-moon/outreach-materials/NASA-LRO-Moon-mosaic.png?crop=faces%2Cfocalpoint&fit=clip&h=1041&w=1041");background-size:cover;background-position:center;box-shadow:0 0 55px #ffd75c,0 0 150px #ffc52c77;filter:saturate(1.25) sepia(.16) brightness(1.15)}
+.gameHud{position:absolute;right:7%;top:24px;z-index:5;display:flex;gap:28px;font:700 14px monospace;color:#f8e8bd;text-shadow:2px 2px 0 #211a20}
+.gameHud b{color:#fff3bd}
+#gameCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.gameTip{position:absolute;bottom:18px;left:0;width:100%;text-align:center;color:#fff0c5;font-size:12px;opacity:.72;z-index:5;text-shadow:1px 1px 3px #000}
+
+@media(max-width:600px){
+  .moon-wrap{top:31%;width:190px;height:190px}.content{top:53%}h1{letter-spacing:7px}.small{letter-spacing:3px}
+  .gameMoon{width:235px;height:235px;right:-30px;top:52px}
+  .gameHud{right:14px;top:15px;gap:10px;font-size:11px}
+  .gameTip{bottom:10px;font-size:11px;padding:0 10px}
+}
